@@ -1,13 +1,39 @@
 package com.shop.model;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "shop_product")
 public class ShopProductVO implements java.io.Serializable{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name ="prod_no", updatable = false, insertable = false)
 	private Integer prodNo;
+	
+	@Column(name ="prod_type_no")
 	private Integer prodTypeNo;
+	
+	@Column(name ="prod_name")
 	private String prodName;
+	
+	@Column(name ="prod_info")
 	private String prodInfo;
+	
+	@Column(name ="prod_price")
 	private Integer prodPrice;
+	
+	@Column(name ="prod_status")
 	private Integer prodStatus;
+	
+	@Column(name ="prod_date")
 	private Timestamp prodDate;
 	
 	public Integer getProdNo() {
