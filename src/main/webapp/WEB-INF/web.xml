@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
+	<display-name>TopSeeker Shop Product Pictures</display-name>
+	<welcome-file-list>
+	  <welcome-file>index.html</welcome-file>
+	  <welcome-file>index.xhtml</welcome-file>
+	  <welcome-file>index.htm</welcome-file>
+	  <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<resource-ref>
+	  <description>DB Connection</description>
+	  <res-ref-name>jdbc/cia102g2db</res-ref-name>
+	  <res-type>javax.sql.DataSource</res-type>
+	  <res-auth>Container</res-auth>
+ 	</resource-ref>
+  
+	<servlet>
+	  <servlet-name>ShopProductPicServlet</servlet-name>
+	  <servlet-class>com.shop.controller.ShopProductPicServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ShopProductPicServlet</servlet-name>
+	  <url-pattern>/shop/product/prodPic.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	  <servlet-name>ShopProductServlet</servlet-name>
+	  <servlet-class>com.shop.controller.ShopProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>ShopProductServlet</servlet-name>
+	  <url-pattern>/shop/product.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
